@@ -1,0 +1,67 @@
+/* log.css */
+
+body {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 17px;
+  background-image: url('https://i.pinimg.com/originals/d5/3e/10/d53e100ea60c940629c9f2e7115dbdf9.jpg');
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #c8def4;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #a6bdd7;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.container h2 {
+  color: #333;
+  margin-top: 0;
+}
+
+.container i.fas.fa-calendar {
+  font-size: 3em;
+  margin-bottom: 20px;
+  vertical-align: middle;/* Изменено для увеличения размера иконки */
+}
+
+.container form {
+  margin-top: 20px;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.container input[type="submit"],
+.container a.custom-button {
+  background-color: #3f67b2;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 20px;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 14px;
+}
+
+.container input[type="submit"]:hover,
+.container a.custom-button:hover {
+  background-color: #0b106f;
+}

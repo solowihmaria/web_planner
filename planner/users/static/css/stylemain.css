@@ -1,0 +1,207 @@
+/* СТИЛИ ГЛАВНОЙ СТРАНИЦЫ */
+
+/* Подключение шрифтов */
+@import url('imports/fonts.css');
+
+/* Подключение Font Awesome и Bootstrap CSS */
+@import url('imports/custom.css');
+
+body {
+  color: #48118c !important;
+  padding-bottom: 20px;
+  background-color: #ffffff; /* Цвет фона страницы */
+}
+
+/* НАСТРОЙКА ВЕРХНЕЙ ПАНЕЛИ */
+.navbar.navbar-dark.fixed-top {
+  background-color: #8bb0e4;
+}
+
+.navbar.navbar-dark.fixed-top .navbar-brand {
+  color: #b1c8ee; /* Название приложения сверху */
+}
+
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+/* НАСТРОЙКА КАРУСЕЛИ */
+.carousel {
+  height: 400px;
+  margin-bottom: 60px;
+}
+
+.carousel-caption {
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 400px;
+  background-color: #9e9eee;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 400px;
+}
+
+/* ЭЛЕМЕНТЫ ВНУТРИ КОНТЕЙНЕРА */
+.custom-container {
+  margin-top: 0px;
+}
+
+.why-us-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.why-us-container h2 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 50px;
+  color: #000000;
+}
+
+.why-us-container .oval-btn {
+  background-color: #0b106f;
+  border-color: #34185e;
+  color: #ffffff;
+  font-family: 'Comfortaa', sans-serif;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.why-us-container .oval-btn:hover {
+  background-color: #0309a4;
+  border-color: #34185e;
+  color: #ffffff;
+
+}
+
+/* Стили контейнера с достоинствами приложения */
+.custom-container {
+  background-color: #c1d3f2; /* цвет фона */
+  padding: 40px;
+  color: #000000;
+  border-radius: 40px; /* Скругленные края */
+  text-align: center;
+  margin-bottom: 50px; /* Уменьшил отступ снизу */
+  max-height: 500px; /* Установил максимальную высоту контейнера */
+  min-height: 500px; /* Установил минимальную высоту контейнера */
+}
+
+.custom-container i {
+  font-size: 60px; /* Размер иконки */
+  margin-bottom: 15px; /* Отступ снизу между иконкой и текстом */
+}
+
+@media (min-width: 768px) {
+  .custom-container {
+    max-width: 300px; /* Уменьшил максимальную ширину контейнера для более узких экранов */
+    margin-right: 15px; /* Увеличил отступ справа для разделения контейнеров на больших экранах */
+    margin-left: 15px; /* Увеличил отступ слева для разделения контейнеров на больших экранах */
+  }
+}
+
+@media (min-width: 992px) {
+  .custom-container {
+    max-width: 350px; /* Добавил максимальную ширину контейнера для средних экранов */
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-container {
+    max-width: 490px; /* Добавил максимальную ширину контейнера для больших экранов */
+  }
+}
+
+/* НАСТРОЙКА ШРИФТОВ */
+.navbar-brand {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.carousel-caption h1 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 4.4em;
+  color: #000000; /* Черный цвет текста */
+}
+
+#myCarousel .carousel-caption p {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 2.2em;
+  color: #000000; /* Черный цвет текста */
+}
+
+.featurette-heading {
+  font-family: 'Russo One', sans-serif;
+}
+
+.lead {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+/* АДАПТИВНЫЙ CSS */
+@media (min-width: 768px) {
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+
+  .navbar-wrapper > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* .featurette-heading {
+    margin-top: 120px;
+  } */
+}
+
+.img-rounded.img-responsive.center-block {
+  max-width: 100%;
+  height: auto;
+}

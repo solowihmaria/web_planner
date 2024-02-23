@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+</head>
+<body>
+    <div class="registration-container">
+        <div class="registration-header">
+            <i class="fas fa-calendar"></i> <!-- Значок календаря -->
+            <h2>Регистрация</h2>
+        </div>
+
+        <form method="post" class="registration-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+
+        <div class="back-links">
+            <a href="{% url 'login' %}" class="custom-button custom-link">Войти в существующий аккаунт</a>
+            <a href="{% url 'profile' %}" class="custom-button custom-link">Вернуться на главную</a>
+
+        </div>
+    </div>
+</body>
+</html>

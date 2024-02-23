@@ -1,0 +1,80 @@
+/* Стили для фона страницы */
+body {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 14px;
+    background-image: url('https://i.pinimg.com/originals/d5/3e/10/d53e100ea60c940629c9f2e7115dbdf9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Стили для .registration-container */
+.registration-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px; /* Закругленные края */
+    background-color: #a6bdd7;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Стили для .registration-header */
+.registration-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-header i {
+    font-size: 36px; /* Увеличенный размер значка */
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Стили для .registration-form */
+.registration-form {
+    margin-bottom: 15px;
+}
+
+.registration-form input,
+.registration-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Стили для овальных кнопок и ссылок */
+.registration-form button, .back-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Стили для овальных кнопок */
+.registration-form button {
+    background-color: #3f67b2;
+    color: #fff;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+/* Стили для изменения цвета кнопки при наведении */
+.registration-form button:hover {
+    background-color: #0b106f;
+}
+
+/* Стили для ссылок */
+.back-links a {
+    margin-right: 15px;
+    color: #8d22eb;
+    font-weight: bold;
+}
+
+/* Стили для изменения цвета ссылок при наведении */
+.back-links a:hover {
+    text-decoration: underline;
+}
