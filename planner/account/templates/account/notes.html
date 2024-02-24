@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,7 @@
             <a href="#">Планы</a>
         </li>
         <li class="list-group-item">
-            <a href="{% url 'notes' %}">Заметки</a>
+            <a href="{% url 'notes' %}">Задачи</a>
         </li>
     </ul>
 </div>
@@ -55,7 +55,7 @@
 <div class="container mt-5 content">
     <!-- Кнопка для вызова модального окна -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
-        Добавить новую категорию заметок
+        Добавить новую категорию задач
     </button>
 
    <!-- Место для отображения списка категорий -->
@@ -83,12 +83,12 @@
 
             <div id="categoryCollapse{{ category.id }}" class="collapse show" aria-labelledby="categoryHeading{{ category.id }}" data-bs-parent="#categoryAccordion">
                 <div class="card-body">
-                    <!-- Кнопка "Добавить заметку" -->
+                    <!-- Кнопка "Добавить задачу" -->
                     <button type="button" class="btn btn-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#addNoteModal{{ category.id }}">
-                        Добавить заметку
+                        Добавить задачу
                     </button>
 
-         <!-- Место для отображения списка заметок -->
+         <!-- Место для отображения списка задач -->
                     <ul id="noteList{{ category.id }}" class="list-group mt-3">
     {% for note in category.note_set.all %}
         <li class="list-group-item d-flex justify-content-between align-items-center" id="noteItem{{ note.id }}">
@@ -109,19 +109,19 @@
         </li>
 
 
-                            <!-- Модальное окно для редактирования заметки -->
+                            <!-- Модальное окно для редактирования задач -->
                             <div class="modal fade" id="editNoteModal{{ note.id }}" tabindex="-1" aria-labelledby="editNoteModalLabel{{ note.id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="editNoteModalLabel{{ note.id }}">Редактировать заметку</h5>
+                                            <h5 class="modal-title" id="editNoteModalLabel{{ note.id }}">Редактировать задачу</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <!-- Форма редактирования заметки -->
+                                            <!-- Форма редактирования задач -->
                                             <form id="editNoteForm{{ note.id }}">
                                                 <div class="mb-3">
-                                                    <label for="editNoteText{{ note.id }}" class="form-label">Новый текст заметки:</label>
+                                                    <label for="editNoteText{{ note.id }}" class="form-label">Новый текст:</label>
                                                     <textarea class="form-control" id="editNoteText{{ note.id }}" name="editNoteText" rows="4" required>{{ note.text }}</textarea>
                                                 </div>
                                                 <button type="submit" class="btn btn-warning">Сохранить изменения</button>
@@ -131,16 +131,16 @@
                                 </div>
                             </div>
 
-                            <!-- Модальное окно для подтверждения удаления заметки -->
+                            <!-- Модальное окно для подтверждения удаления задач -->
                             <div class="modal fade" id="deleteNoteModal{{ note.id }}" tabindex="-1" aria-labelledby="deleteNoteModalLabel{{ note.id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteNoteModalLabel{{ note.id }}">Удалить заметку</h5>
+                                            <h5 class="modal-title" id="deleteNoteModalLabel{{ note.id }}">Удалить задачу</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Вы уверены, что хотите удалить эту заметку?</p>
+                                            <p>Вы уверены, что хотите удалить эту задачу?</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
@@ -153,18 +153,18 @@
                     </ul>
 
 
-                    <!-- Модальное окно для ввода текста заметки -->
+                    <!-- Модальное окно для ввода текста задач -->
                     <div class="modal fade" id="addNoteModal{{ category.id }}" tabindex="-1" aria-labelledby="addNoteModalLabel{{ category.id }}" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="addNoteModalLabel{{ category.id }}">Добавить заметку</h5>
+                                    <h5 class="modal-title" id="addNoteModalLabel{{ category.id }}">Добавить задачу</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form id="addNoteForm{{ category.id }}">
                                         <div class="mb-3">
-                                            <label for="noteText{{ category.id }}" class="form-label">Текст заметки:</label>
+                                            <label for="noteText{{ category.id }}" class="form-label">Текст:</label>
                                             <textarea class="form-control" id="noteText{{ category.id }}" name="noteText" rows="4" required></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Добавить</button>
@@ -206,7 +206,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p>Вы уверены, что хотите удалить категорию "{{ category.name }}"? Все заметки в этой категории также будут удалены.</p>
+                            <p>Вы уверены, что хотите удалить категорию "{{ category.name }}"? Все задачи в этой категории также будут удалены.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
@@ -225,7 +225,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addCategoryModalLabel">Добавить новую категорию заметок</h5>
+                <h5 class="modal-title" id="addCategoryModalLabel">Добавить новую категорию задач</h5>
                 <!-- Замените data-dismiss на data-bs-dismiss здесь -->
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -249,9 +249,9 @@
 <script src="{% static 'js/scripts.js' %}"></script>
 
                                     <!-- РАБОТА С КАТЕГОРИЯМИ -->
-    <!-- ДОБАВЛЕНИЕ КАТЕГОРИЙ -->
+<!-- ДОБАВЛЕНИЕ КАТЕГОРИЙ -->
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('addCategoryForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -272,6 +272,9 @@
                     // Закрываем модальное окно
                     const modal = new bootstrap.Modal(document.getElementById('addCategoryModal'));
                     modal.hide();
+
+                    // Перезагружаем страницу
+                    location.reload();
                 },
                 error: function(error) {
                     console.error('Error:', error);
@@ -288,43 +291,44 @@
             newCategoryItem.className = 'card';
 
             newCategoryItem.innerHTML = `
-                <div class="card-header" id="categoryHeading${categoryData.id}">
-                    <h2 class="mb-0">
+                <div class="card-header d-flex align-items-center" id="categoryHeading${categoryData.id}">
+                    <!-- Перемещенные кнопки -->
+                    <button type="button" class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editCategoryModal${categoryData.id}">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCategoryModal${categoryData.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
+                    <!-- Название категории -->
+                    <h2 class="mb-0 ms-2">
                         <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#categoryCollapse${categoryData.id}" aria-expanded="true" aria-controls="categoryCollapse${categoryData.id}">
                             ${categoryData.name}
                         </button>
-                        <div class="d-flex">
-                        <button type="button" class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editCategoryModal{{ category.id }}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCategoryModal{{ category.id }}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
                     </h2>
                 </div>
                 <div id="categoryCollapse${categoryData.id}" class="collapse show" aria-labelledby="categoryHeading${categoryData.id}" data-bs-parent="#categoryAccordion">
                     <div class="card-body">
-                        <!-- Кнопка "Добавить заметку" -->
+                        <!-- Кнопка "Добавить задачу" -->
                         <button type="button" class="btn btn-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#addNoteModal${categoryData.id}">
-                            Добавить заметку
+                            Добавить задачу
                         </button>
 
-                        <!-- Место для отображения списка заметок -->
+                        <!-- Место для отображения списка задач -->
                         <ul id="noteList${categoryData.id}" class="list-group mt-3"></ul>
 
-                        <!-- Модальное окно для ввода текста заметки -->
+                        <!-- Модальное окно для ввода текста задач -->
                         <div class="modal fade" id="addNoteModal${categoryData.id}" tabindex="-1" aria-labelledby="addNoteModalLabel${categoryData.id}" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="addNoteModalLabel${categoryData.id}">Добавить заметку</h5>
+                                        <h5 class="modal-title" id="addNoteModalLabel${categoryData.id}">Добавить задачу</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <form id="addNoteForm${categoryData.id}">
                                             <div class="mb-3">
-                                                <label for="noteText${categoryData.id}" class="form-label">Текст заметки:</label>
+                                                <label for="noteText${categoryData.id}" class="form-label">Текст задачи:</label>
                                                 <textarea class="form-control" id="noteText${categoryData.id}" name="noteText" rows="4" required></textarea>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Добавить</button>
@@ -344,11 +348,13 @@
         }
     });
 </script>
-    <!-- РЕДАКТИРОВАНИЕ  КАТЕГОРИЙ  -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
+
+
+<!-- РЕДАКТИРОВАНИЕ КАТЕГОРИЙ -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         {% for category in categories %}
-            document.getElementById('editCategoryForm{{ category.id }}').addEventListener('submit', function(event) {
+            document.getElementById('editCategoryForm{{ category.id }}').addEventListener('submit', function (event) {
                 event.preventDefault();
 
                 const newCategoryName = document.getElementById('editCategoryName{{ category.id }}').value;
@@ -365,23 +371,30 @@
                         category_id: {{ category.id }},
                         new_name: newCategoryName
                     }),
-                    success: function(data) {
-                        // Обновить название категории на странице
-                        const categoryButton = document.querySelector(`#categoryHeading{{ category.id }} button`);
-                        categoryButton.textContent = newCategoryName;
+                    success: function (data) {
+                        // Обновить текст названия категории вручную
+                        const categoryHeading = document.querySelector(`#categoryHeading{{ category.id }} h2 button`);
+                        categoryHeading.textContent = newCategoryName;
 
                         // Закрыть модальное окно
-                        const modal = new bootstrap.Modal(document.getElementById('editCategoryModal{{ category.id }}'));
+                        const modal = new bootstrap.Modal(document.getElementById(`editCategoryModal{{ category.id }}`));
                         modal.hide();
+
+                        // Перезагрузить страницу
+                        location.reload();
                     },
-                    error: function(error) {
+                    error: function (error) {
                         console.error('Error:', error);
                     }
                 });
+
+                return false; // Предотвращаем стандартное поведение формы
             });
         {% endfor %}
     });
 </script>
+
+
 
 <!-- УДАЛЕНИЕ КАТЕГОРИЙ -->
 <script>
@@ -434,179 +447,183 @@
 
 
 
-                                        <!-- РАБОТА С ЗАМЕТКАМИ  -->
-    <!-- ДОБАВЛЕНИЕ ЗАМЕТОК -->
+                                        <!-- РАБОТА С ЗАДАЧАМИ -->
+   <!-- ДОБАВЛЕНИЕ задач -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    {% for category in categories %}
-        document.getElementById('addNoteForm{{ category.id }}').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const noteText = document.getElementById('noteText{{ category.id }}').value;
-
-            $.ajax({
-                type: 'POST',
-                url: '{% url "add_note" %}',
-                dataType: 'json',
-                contentType: 'application/json',
-                headers: {
-                    'X-CSRFToken': '{{ csrf_token }}'
-                },
-                data: JSON.stringify({
-                    category_id: {{ category.id }},
-                    text: noteText
-                }),
-                success: function(data) {
-                    // Создаем новый элемент для заметки
-                    const noteList = document.getElementById('noteList{{ category.id }}');
-                    const newNoteItem = document.createElement('li');
-                    newNoteItem.className = 'list-group-item';
-                    newNoteItem.innerHTML = `
-                        <input type="checkbox" id="noteCheckbox${data.id}" name="noteCheckbox${data.id}" ${data.is_completed ? 'checked' : ''}>
-                        <label for="noteCheckbox${data.id}" class="note-label">${data.text}</label>
-                        <div class="d-flex">
-                            <button type="button" class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editNoteModal${data.id}">
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteNoteModal${data.id}">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    `;
-                    noteList.appendChild(newNoteItem);
-
-                    // Закрываем модальное окно
-                    const modal = new bootstrap.Modal(document.getElementById('addNoteModal{{ category.id }}'));
-                    modal.hide();
-                },
-                error: function(error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-
-        // Обработчик изменения состояния чекбокса
-document.getElementById('noteList{{ category.id }}').addEventListener('change', function(event) {
-    const checkbox = event.target;
-    if (checkbox.type === 'checkbox') {
-        const noteId = checkbox.id.replace('noteCheckbox', '');
-        const isCompleted = checkbox.checked;
-
-        // Отправляем запрос на обновление состояния заметки
-        $.ajax({
-            type: 'POST',
-            url: '{% url "update_note" %}',
-            dataType: 'json',
-            contentType: 'application/json',
-            headers: {
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-            data: JSON.stringify({
-                note_id: noteId,
-                is_completed: isCompleted
-            }),
-            success: function(data) {
-                // Находим элемент <label> для заметки
-                const noteLabel = document.querySelector(`label[for="noteCheckbox${noteId}"]`);
-
-                // Добавляем или удаляем класс completed в зависимости от состояния чекбокса
-                if (isCompleted) {
-                    noteLabel.classList.add('completed');
-                } else {
-                    noteLabel.classList.remove('completed');
-                }
-            },
-            error: function(error) {
-                console.error('Error:', error);
-            }
-        });
-    }
-});
-
-    {% endfor %}
-});
-
-</script>
-
-    <!-- РЕДАКТИРОВАНИЕ ЗАМЕТОК -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    {% for category in categories %}
-        {% for note in category.note_set.all %}
-            document.getElementById('editNoteForm{{ note.id }}').addEventListener('submit', function (event) {
+    document.addEventListener('DOMContentLoaded', function() {
+        {% for category in categories %}
+            document.getElementById('addNoteForm{{ category.id }}').addEventListener('submit', function (event) {
                 event.preventDefault();
 
-                const newNoteText = document.getElementById('editNoteText{{ note.id }}').value;
+                const noteText = document.getElementById('noteText{{ category.id }}').value;
 
                 $.ajax({
                     type: 'POST',
-                    url: '{% url "edit_note" %}',
+                    url: '{% url "add_note" %}',
                     dataType: 'json',
                     contentType: 'application/json',
                     headers: {
                         'X-CSRFToken': '{{ csrf_token }}'
                     },
                     data: JSON.stringify({
-                        note_id: {{ note.id }},
-                        new_text: newNoteText
+                        category_id: {{ category.id }},
+                        text: noteText
                     }),
-                    success: function (data) {
-                        // Обновить текст заметки на странице
-                        const noteLabel = document.querySelector(`label[for="noteCheckbox${data.id}"]`);
-                        noteLabel.textContent = newNoteText;
+                    success: function(data) {
+                        // Создаем новый элемент для задачи
+                        const noteList = document.getElementById('noteList{{ category.id }}');
+                        const newNoteItem = document.createElement('li');
+                        newNoteItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+                        newNoteItem.innerHTML = `
+                            <div>
+                                <input type="checkbox" id="noteCheckbox${data.id}" name="noteCheckbox${data.id}" ${data.is_completed ? 'checked' : ''}>
+                                <label for="noteCheckbox${data.id}" class="note-label">${data.text}</label>
+                            </div>
+                            <div class="d-flex">
+                                <button type="button" class="btn btn-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editNoteModal${data.id}">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteNoteModal${data.id}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        `;
+                        noteList.appendChild(newNoteItem);
 
-                        // Закрыть модальное окно
-                        const modal = new bootstrap.Modal(document.getElementById('editNoteModal{{ note.id }}'));
+                        // Закрываем модальное окно
+                        const modal = new bootstrap.Modal(document.getElementById('addNoteModal{{ category.id }}'));
                         modal.hide();
+
+                        // Перезагружаем страницу
+                        location.reload();
                     },
-                    error: function (error) {
+                    error: function(error) {
                         console.error('Error:', error);
                     }
                 });
             });
-        {% endfor %}
-    {% endfor %}
-});
 
-</script>
-    <!-- УДАЛЕНИЕ ЗАМЕТОК -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    {% for category in categories %}
-        {% for note in category.note_set.all %}
-            document.getElementById('deleteNoteBtn{{ note.id }}').addEventListener('click', function () {
-                const noteId = {{ note.id }};
+            // Обработчик изменения состояния чекбокса
+            document.getElementById('noteList{{ category.id }}').addEventListener('change', function(event) {
+                const checkbox = event.target;
+                if (checkbox.type === 'checkbox') {
+                    const noteId = checkbox.id.replace('noteCheckbox', '');
+                    const isCompleted = checkbox.checked;
 
-                $.ajax({
-                    type: 'POST',
-                    url: '{% url "delete_note" %}',
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    headers: {
-                        'X-CSRFToken': '{{ csrf_token }}'
-                    },
-                    data: JSON.stringify({
-                        note_id: noteId
-                    }),
-                    success: function (data) {
-                        // Удалить заметку из списка с анимацией Bootstrap
-                        const noteItem = document.querySelector(`#noteList{{ category.id }} #noteItem${noteId}`);
-                        noteItem.remove();
+                    // Отправляем запрос на обновление состояния задач
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url "update_note" %}',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        headers: {
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        data: JSON.stringify({
+                            note_id: noteId,
+                            is_completed: isCompleted
+                        }),
+                        success: function(data) {
+                            // Находим элемент <label> для задач
+                            const noteLabel = document.querySelector(`label[for="noteCheckbox${noteId}"]`);
 
-                        // Скрыть связанное с заметкой модальное окно
-                        const modal = new bootstrap.Modal(document.getElementById(`deleteNoteModal{{ note.id }}`));
-                        modal.hide();
-                    },
-                    error: function (error) {
-                        console.error('Error:', error);
-                    }
-                });
+                            // Добавляем или удаляем класс completed в зависимости от состояния чекбокса
+                            if (isCompleted) {
+                                noteLabel.classList.add('completed');
+                            } else {
+                                noteLabel.classList.remove('completed');
+                            }
+                        },
+                        error: function(error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                }
             });
         {% endfor %}
-    {% endfor %}
-});
+    });
 
 </script>
+
+
+<!-- РЕДАКТИРОВАНИЕ задач -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        {% for category in categories %}
+            {% for note in category.note_set.all %}
+                document.getElementById('editNoteForm{{ note.id }}').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    const newNoteText = document.getElementById('editNoteText{{ note.id }}').value;
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url "edit_note" %}',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        headers: {
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        data: JSON.stringify({
+                            note_id: {{ note.id }},
+                            new_text: newNoteText
+                        }),
+                        success: function (data) {
+                            // Обновить текст задач на странице
+                            const noteLabel = document.querySelector(`label[for="noteCheckbox${data.id}"]`);
+                            noteLabel.textContent = newNoteText;
+
+                            // Закрыть модальное окно
+                            const modal = new bootstrap.Modal(document.getElementById('editNoteModal{{ note.id }}'));
+                            modal.hide();
+
+                            // Перезагрузить страницу
+                            location.reload();
+                        },
+                        error: function (error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                });
+            {% endfor %}
+        {% endfor %}
+    });
+</script>
+
+
+<!-- УДАЛЕНИЕ задач -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        {% for category in categories %}
+            {% for note in category.note_set.all %}
+                document.getElementById('deleteNoteBtn{{ note.id }}').addEventListener('click', function () {
+                    const noteId = {{ note.id }};
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '{% url "delete_note" %}',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        headers: {
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        data: JSON.stringify({
+                            note_id: noteId
+                        }),
+                        success: function (data) {
+                            // Перезагрузить страницу после успешного удаления задач
+                            location.reload();
+                        },
+                        error: function (error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                });
+            {% endfor %}
+        {% endfor %}
+    });
+</script>
+
 
 </body>
 </html>
