@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{% static 'css/navmain.css' %}">
+      <link rel="stylesheet" href="{% static 'css/profile.css' %}">
       <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
       <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <title>Личный кабинет</title>
@@ -34,7 +34,7 @@
                 <button class="btn btn-outline-success" type="submit">Поиск</button>
             </form>
             <a href="#" class="navbar-icon"><i class="fas fa-bell"></i></a>
-            <a href="#" class="navbar-icon"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="{% url 'login' %}" class="navbar-icon"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 </header>
@@ -44,6 +44,9 @@
 <!-- Боковая панель для навигации (по умолчанию открыта) -->
 <div id="sidebar">
     <ul class="list-group">
+        <li class="list-group-item">
+            <a href="{% url 'profile' %}">Главная</a>
+        </li>
         <li class="list-group-item">
             <a href="#">Планы</a>
         </li>

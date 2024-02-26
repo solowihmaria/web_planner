@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    font-family: 'Comfortaa', sans-serif !important;
+}
+
+header {
+    z-index: 1000; /* Устанавливаем z-index, чтобы верхняя панель была поверх боковой */
+}
+
+ /* НАСТРОЙКИ БОКОВОЙ ПАНЕЛИ*/
+ #sidebar {
+    height: 100vh;
+    background-color: #2a2a7d !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 15%;
+    max-width: 15%;
+    padding-top: 70px;
+    transition: width 0.5s; /* Добавляем плавное изменение ширины */
+}
+
+#sidebar ul {
+    list-style: none; /* Удаление стандартного маркера списка */
+    padding: 0;
+}
+
+#sidebar .list-group-item {
+    background-color: #2a2a7d; /* цвет для пунктов в боковой панели */
+}
+
+#sidebar .list-group-item {
+    border-bottom: 1px solid #f7f8fa; /* Добавление разделительной линии между элементами списка */
+}
+
+#sidebar .list-group-item:hover {
+    background-color: #0d204a; /*  цвет при наведении */
+}
+
+#sidebar .list-group-item a {
+    display: block;
+    padding: 10px;
+    color: rgb(239, 239, 245); /* Цвет текста */
+    text-decoration: none; /* Удаление подчеркивания */
+}
+
+#sidebar .list-group-item a:hover {
+        color: #bec1c9; /* Цвет текста при наведении */
+}
+
+
+.container.content {
+    margin-left: 20%; /* Устанавливаем отступ слева, равный ширине бокового меню */
+    padding: 20px; /* Добавляем отступы в основной контент */
+    width: 80%; /* Установка ширины контента на оставшиеся 85% */
+}
+
+
+
+/* ВЕРХНЯЯ ПАНЕЛЬ НАВИГАЦИИ */
+.navbar {
+    background-color: #2a2a7d !important; /*  цвет для верхней панели навигации */
+    border-bottom: 2px solid #09193f; /* граница снизу */
+}
+
+.navbar .nav-link {
+    color: #edecf0 !important; /*  цвет текста обращения к пользователю */
+}
+
+
+/* Добавим стили для иконок в верхней панели навигации */
+
+/* левая иконка*/
+#notification-icon {
+    font-size: 1.7rem;
+    color: white;
+    margin-right: 10px; /* отступ для разделения от текста */
+}
+
+.navbar-brand {
+    color: white !important; /* Цвет текста белый */
+}
+
+
+/* правые иконки*/
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Это выравнивает иконки справа */
+}
+
+.navbar-icon {
+    margin-left: 20px; /* Добавляем пространство между иконками */
+    font-size: 1.7rem;
+    color: #f9f9f9;
+    text-decoration: none;
+}
+
+.navbar-icon:hover {
+    color: #c4cbf2;
+}
+
+/* Стили для кнопки поиска */
+.navbar-icons .btn-outline-success {
+    color: #fff; /* Цвет текста */
+    background-color: #525fb5; /* Цвет фона */
+    border-color: #273375; /* Цвет границы */
+}
+
+.navbar-icons .btn-outline-success:hover {
+    color: #fff; /* Цвет текста при наведении */
+    background-color: #2f3a82; /* Цвет фона при наведении */
+    border-color: #9394bf; /* Цвет границы при наведении */
+}
+
+
+
+/* Добавляем отступы для кнопки "Добавить новую категорию задач" */
+.btn.btn-primary {
+    margin-top: 1%; /* Процент от ширины родительского блока */
+    margin-bottom: 1%;
+    border-radius: 10px;
+    background-color: #5052b6;
+    border-color: #181d3d;
+    color: #fff;
+}
+
+
+.btn.btn-primary:hover {
+    background-color: #2f3070;
+    border-color: #181d3d;
+}
+
+
+/* Стиль для перемещенных кнопок "Редактировать" и "Удалить" */
+.btn-warning,
+.btn-danger {
+    border-radius: 10px; /* Произвольное значение для закругленных краев */
+    background-color: #181d3d !important;
+    border-color: #1b1e32 !important;
+    color: #fff !important;
+}
+
+.btn-warning:hover,
+.btn-danger:hover {
+    background-color: #4244b8 !important;
+    border-color: #181d3d !important;
+}
+
+
+
+/* АККОРДИОН  */
+
+#categoryAccordion {
+    max-width: 90%;
+    overflow-x: hidden;
+}
+
+/* Заголовок аккордеона */
+.card-header {
+    background-color: #7a809e !important; /*  цвет для фона заголовка аккордеона */
+
+}
+
+/* Иконка аккордеона */
+.card-header button {
+    color: #f1efe9 !important; /*  цвет для иконки и названия категории*/
+}
+
+/* Содержимое аккордеона */
+.card-body {
+    border-top: 1px solid #6460bd !important; /* Граница сверху в голубом цвете для разделения карточек аккордеона */
+    background-color: #e2e3eb !important; /*  цвет для фона заголовка аккордеона */
+}
+
+/* Цвет текста внутри аккордеона */
+.card-body p {
+    color: #07032a !important; /* Цвет текста внутри аккордеона (ваш выбор) */
+}
+
+/* Стили для кнопок внутри аккордеона */
+.card-body button {
+    background-color: #2a2a7d!important; /*  цвет для фона кнопок внутри аккордеона */
+    color: #fff !important; /* Белый цвет для текста кнопок внутри аккордеона */
+    border: none;
+}
+
+.card-body button:hover {
+    background-color: #8586cb !important; /* Цвет фона кнопок при наведении */
+}
+
+
+/* ЗАМЕТКИ */
+.list-group-item {
+    max-height: 100px; /* Замените этот параметр на желаемую максимальную высоту */
+    overflow-y: auto; /* Добавление вертикальной прокрутки при необходимости */
+    word-wrap: break-word; /* Разрыв слов в случае необходимости */
+    overflow-wrap: break-word; /* Аналогично для браузеров, поддерживающих стандарт CSS Overflow Wrap */
+    white-space: normal; /* Определение как следует разбивать строки внутри элемента */
+}
+
+.note-item {
+    display: flex; /* Размещаем элементы внутри контейнера в ряд */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.note-item input {
+    margin-right: 10px; /* Расстояние между чекбоксом и заметкой */
+}
+
+.note-item label {
+    flex: 1; /* Растягиваем заметку на всю доступную ширину */
+    display: block; /* Размещаем текст заметки на новой строке */
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Comfortaa', sans-serif !important;
+}
+
+header {
+    z-index: 1000; /* Устанавливаем z-index, чтобы верхняя панель была поверх боковой */
+}
+
+
+
+
+/* Стиль для чекбокса */
+.custom-checkbox input[type="checkbox"] {
+    transform: scale(1.5); /* Увеличение размера чекбокса */
+    margin-right: 10px; /* Расстояние между чекбоксом и текстом */
+}
+
+/* Стиль для метки (label) */
+.custom-checkbox .note-label {
+    cursor: pointer; /* Добавление стиля указателя для интерактивности */
+}
+
+/* Стиль для метки, когда чекбокс отмечен (checked) */
+.custom-checkbox input[type="checkbox"]:checked + .note-label {
+    text-decoration: line-through; /* Перечеркивание текста при отметке чекбокса */
+    color: #242259; /* Цвет текста при отметке чекбокса */
+}
+
+
+
+
