@@ -6,6 +6,7 @@ import json
 from .models import Category, Note
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_GET
 
 def profile(request):
     return render(request, 'account/profile.html')
@@ -89,3 +90,19 @@ def delete_note(request):
         note.delete()
         response_data = {'success': True}
         return JsonResponse(response_data)
+
+
+@require_GET
+def get_completion_data(request):
+    # Получаем текущего пользователя
+    user = request.user
+
+    # Подсчитываем количество выполненных задач пользователя
+    completed_tasks = Note.objects.filter(user=user, is_completed=True).count()
+
+    # Подсчитываем общее количество задач пользователя
+    total_tasks = Note.objects.filter(user=user).count()
+
+    # Отправляем данные в формате JSON
+    return JsonResponse({'completed': completed_tasks, 'total': total_tasks})
+
