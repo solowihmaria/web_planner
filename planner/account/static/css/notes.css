@@ -10,7 +10,7 @@ header {
  /* НАСТРОЙКИ БОКОВОЙ ПАНЕЛИ*/
  #sidebar {
     height: 100vh;
-    background-color: #2a2a7d !important;
+    background-color: #20205f !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@ header {
 }
 
 #sidebar .list-group-item {
-    background-color: #2a2a7d; /* цвет для пунктов в боковой панели */
+    background-color: #20205f; /* цвет для пунктов в боковой панели */
 }
 
 #sidebar .list-group-item {
@@ -59,7 +59,7 @@ header {
 
 /* ВЕРХНЯЯ ПАНЕЛЬ НАВИГАЦИИ */
 .navbar {
-    background-color: #2a2a7d !important; /*  цвет для верхней панели навигации */
+    background-color: #20205f !important; /*  цвет для верхней панели навигации */
     border-bottom: 2px solid #09193f; /* граница снизу */
 }
 
@@ -103,14 +103,14 @@ header {
 /* Стили для кнопки поиска */
 .navbar-icons .btn-outline-success {
     color: #fff; /* Цвет текста */
-    background-color: #525fb5; /* Цвет фона */
-    border-color: #273375; /* Цвет границы */
+    background-color: #2d2d86; /* Цвет фона */
+    border-color: #979ec6; /* Цвет границы */
 }
 
 .navbar-icons .btn-outline-success:hover {
     color: #fff; /* Цвет текста при наведении */
     background-color: #2f3a82; /* Цвет фона при наведении */
-    border-color: #9394bf; /* Цвет границы при наведении */
+    border-color: #f5f5f8; /* Цвет границы при наведении */
 }
 
 
@@ -120,14 +120,14 @@ header {
     margin-top: 1%; /* Процент от ширины родительского блока */
     margin-bottom: 1%;
     border-radius: 10px;
-    background-color: #5052b6;
+    background-color: #2d2d86;
     border-color: #181d3d;
     color: #fff;
 }
 
 
 .btn.btn-primary:hover {
-    background-color: #2f3070;
+    background-color: rgb(77, 79, 159);
     border-color: #181d3d;
 }
 
@@ -136,14 +136,14 @@ header {
 .btn-warning,
 .btn-danger {
     border-radius: 10px; /* Произвольное значение для закругленных краев */
-    background-color: #181d3d !important;
+    background-color: #21274e !important;
     border-color: #1b1e32 !important;
     color: #fff !important;
 }
 
 .btn-warning:hover,
 .btn-danger:hover {
-    background-color: #4244b8 !important;
+    background-color: #2f3072 !important;
     border-color: #181d3d !important;
 }
 
@@ -158,7 +158,7 @@ header {
 
 /* Заголовок аккордеона */
 .card-header {
-    background-color: #7a809e !important; /*  цвет для фона заголовка аккордеона */
+    background-color: #60657b !important; /*  цвет для фона заголовка аккордеона */
 
 }
 
@@ -169,7 +169,7 @@ header {
 
 /* Содержимое аккордеона */
 .card-body {
-    border-top: 1px solid #6460bd !important; /* Граница сверху в голубом цвете для разделения карточек аккордеона */
+    border-top: 1px solid #454460 !important; /* Граница сверху в голубом цвете для разделения карточек аккордеона */
     background-color: #e2e3eb !important; /*  цвет для фона заголовка аккордеона */
 }
 
@@ -180,7 +180,7 @@ header {
 
 /* Стили для кнопок внутри аккордеона */
 .card-body button {
-    background-color: #2a2a7d!important; /*  цвет для фона кнопок внутри аккордеона */
+    background-color: #2b2b65!important; /*  цвет для фона кнопок внутри аккордеона */
     color: #fff !important; /* Белый цвет для текста кнопок внутри аккордеона */
     border: none;
 }

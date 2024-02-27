@@ -42,40 +42,96 @@
             <a href="#">Планы</a>
         </li>
         <li class="list-group-item">
-            <a href="{% url 'notes' %}">Заметки</a>
+            <a href="{% url 'notes' %}">Задачи</a>
         </li>
     </ul>
 </div>
 
 <!-- Контент страницы -->
-<div class="container mt-5 content">
-    <!-- Карусель --><a class="nav-link" href="#">Добро пожаловать, {{ user.username|default:'Guest' }} ! <span class="sr-only">(текущая)</span></a>
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+<div class="container mt-5 content text-center">
+    <h1 id="welcome-header" class="mb-4">Добро пожаловать, {{ user.username|default:'Guest' }} !</h1>
+    <p id="tips-paragraph">Приготовили для вас несколько полезных советов:</p>
+    <!-- КАРУСЕЛЬ -->
+    <div id="carouselAdvice" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <!-- Здесь добавьте элементы слайдов для карусели -->
             <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 1">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Первый слайд</h5>
-                    <p>Описание первого слайда.</p>
+                    <h1>Поставьте конкретные цели:</h1>
+                    <p>Разбейте большие задачи на меньшие и устанавливайте ясные цели для повышения продуктивности</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 2">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Второй слайд</h5>
-                    <p>Описание второго слайда.</p>
+                    <h1>Приоритезация задач:</h1>
+                    <p>Определите наиважнейшие задачи и начинайте с них</p>
                 </div>
             </div>
-            <!-- Добавьте еще слайды по аналогии -->
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Используйте метод Помидора:</h1>
+                    <p>Работайте фокусированно 25 минут, затем делайте короткий перерыв. Повторяйте цикл</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 4">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Используйте to-do листы:</h1>
+                    <p>Записывайте свои задачи, чтобы не забывать о них</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 5">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Паузы для отдыха:</h1>
+                    <p>Регулярные короткие перерывы помогут сохранить высокую концентрацию</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 6">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Запланируйте завтра сегодня:</h1>
+                    <p>Перед окончанием рабочего дня определите свои задачи на следующий день</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 7">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Избегайте перфекционизма:</h1>
+                    <p>Сосредотачивайтесь на выполнении задач, а не на их безупречности</p>
+                </div>
+            </div><div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 8">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Утренняя рутина:</h1>
+                    <p>Создайте утренний ритуал, чтобы запустить себя в рабочий режим</p>
+                </div>
+            </div><div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 9">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Техника 2-минут:</h1>
+                    <p>Если задача займет менее 2 минут, сделайте ее немедленно</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 10">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Избегайте многозадачности:</h1>
+                    <p>Фокусируйтесь на одной задаче за раз, чтобы повысить эффективность</p>
+                </div>
+            </div>
 
-        </div>
+    <!-- Добавить еще слайды по аналогии -->
+
         <!-- Кнопки для переключения слайдов -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAdvice" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAdvice" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -88,8 +144,6 @@
         <canvas id="completionChart"></canvas>
     </div>
 </div>
-
-
 
 
 
@@ -121,7 +175,7 @@
                             labels: ['выполнено', 'не выполнено'],
                             datasets: [{
                                 data: [data.completed, data.total - data.completed],
-                                backgroundColor: ['#775ad4', '#91979d'],
+                                backgroundColor: ['#20205f', '#91979d'],
                             }],
                         },
                     });
@@ -136,7 +190,7 @@
         // Функция для определения подписи в зависимости от процента выполненных задач
         function getCompletionCaption(completedPercent) {
             if (completedPercent === 0) {
-                return 'У вас еще нет поставленных задач';
+                return 'У вас еще нет выполненных/поставленных задач';
             } else if (completedPercent < 20) {
                 return 'Вам предстоит еще много работы. Не сдавайтесь!';
             } else if (completedPercent >= 20 && completedPercent <= 50) {

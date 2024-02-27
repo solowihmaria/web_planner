@@ -10,7 +10,7 @@ header {
  /* НАСТРОЙКИ БОКОВОЙ ПАНЕЛИ*/
  #sidebar {
     height: 100vh;
-    background-color: #2a2a7d !important;
+    background-color: #20205f !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@ header {
 }
 
 #sidebar .list-group-item {
-    background-color: #2a2a7d; /* цвет для пунктов в боковой панели */
+    background-color: #20205f; /* цвет для пунктов в боковой панели */
 }
 
 #sidebar .list-group-item {
@@ -51,7 +51,7 @@ header {
 
 /* ВЕРХНЯЯ ПАНЕЛЬ НАВИГАЦИИ */
 .navbar {
-    background-color: #2a2a7d !important; /*  цвет для верхней панели навигации */
+    background-color: #20205f !important; /*  цвет для верхней панели навигации */
     border-bottom: 2px solid #09193f; /* граница снизу */
 }
 
@@ -109,11 +109,28 @@ header {
 
 /* ОСНОВНОЙ КОНТЕНТ*/
 
+/* Стили для заголовка и подзаголовка */
+#welcome-header {
+    font-size: 3rem;
+    margin-bottom: 4 rem;
+
+}
+
+#tips-paragraph {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
 /* Основной контент */
 .container.content {
     margin-left: 15%; /* Устанавливаем отступ слева, равный ширине бокового меню */
     padding: 20px; /* Добавляем отступы в основной контент */
     width: 85%; /* Установка ширины контента на оставшиеся 85% */
+}
+
+h2.text-center.mb-4 {
+    margin-top: 40px; /* Добавляем отступ сверху над заголовком */
+    font-size: 3rem;
 }
 
 /* Статистика выполненных задач */
@@ -130,11 +147,6 @@ header {
     margin: auto; /* Устанавливаем автомаргин для центрирования */
 }
 
-/* Карусель */
-#carouselExample {
-    margin-bottom: 20px; /* Добавляем отступ снизу карусели */
-}
-
 
 #completionCaption {
     margin-top: 20px; /* Добавляем отступ сверху над подписью к графику */
@@ -142,6 +154,29 @@ header {
     text-align: center; /* Выравниваем содержимое по центру */
     font-size: 1.7rem;
 }
+
+/* Карусель */
+#carouselAdvice {
+    margin-bottom: 20px; /* Добавляем отступ снизу карусели */
+    max-width: 1200px; /* Фиксированная ширина карусели */
+    margin: auto; /* Центрируем карусель по горизонтали */
+}
+
+.carousel-inner {
+    text-align: center; /* Выравниваем текст внутри слайдов по центру */
+}
+
+.carousel-caption {
+    font-size: 1.6rem; /* Размер текста в подписи к слайду */
+}
+
+.carousel-item img {
+    width: 1000px; /* Фиксированная ширина изображения внутри слайда */
+    height: 250px; /* Фиксированная высота изображения внутри слайда */
+    object-fit: cover; /* Масштабирование и обрезка изображения для занятия всего контейнера */
+}
+
+
 
 
 
