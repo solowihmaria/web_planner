@@ -1,6 +1,9 @@
+/* шрифт Tektur */
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Comfortaa', sans-serif !important;
+    font-family: 'Tektur', sans-serif !important;
 }
 
 header {
@@ -216,7 +219,7 @@ header {
 
 body {
     margin: 0;
-    font-family: 'Comfortaa', sans-serif !important;
+    font-family: 'Tektur', sans-serif !important;
 }
 
 header {

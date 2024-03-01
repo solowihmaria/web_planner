@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/notes.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
@@ -40,7 +41,7 @@
             <a href="{% url 'profile' %}">Главная</a>
         </li>
         <li class="list-group-item">
-            <a href="#">Планы</a>
+            <a href="{% url 'calendar' %}">Планы</a>
         </li>
         <li class="list-group-item">
             <a href="{% url 'notes' %}">Задачи</a>

@@ -3,7 +3,6 @@ from django.urls import path
 from . import views
 from .views import add_category, add_note, update_note, edit_category, delete_category, edit_note, delete_note
 from .views import get_completion_data
-
 urlpatterns = [
     path('', views.profile, name="profile"),
     path('notes/', views.notes, name='notes'),
@@ -15,5 +14,7 @@ urlpatterns = [
     path('edit_note/', edit_note, name='edit_note'),
     path('delete_note/', delete_note, name='delete_note'),
     path('completion-data/', get_completion_data, name='completion_data'),
+
+
 
 ]

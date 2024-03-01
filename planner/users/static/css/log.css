@@ -1,23 +1,24 @@
-/* log.css */
+/* шрифт Tektur */
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
 
 body {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Tektur', sans-serif !important;
   font-size: 17px;
-  background-image: url('https://i.pinimg.com/originals/d5/3e/10/d53e100ea60c940629c9f2e7115dbdf9.jpg');
+  background-image: url('https://i.pinimg.com/564x/d8/53/49/d85349f7e91f366aee9f3e21f468f4bf.jpg');
   background-size: cover;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #c8def4;
+  background-color: #d2dbe4;
 }
 
 .container {
   max-width: 400px;
   width: 100%;
   padding: 20px;
-  background-color: #a6bdd7;
+  background-color: #b4dbeb;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -48,7 +49,7 @@ body {
 
 .container input[type="submit"],
 .container a.custom-button {
-  background-color: #3f67b2;
+  background-color: #0b106f;
   color: white;
   padding: 15px 30px;
   border: none;
@@ -57,11 +58,11 @@ body {
   transition: background-color 0.3s;
   display: inline-block;
   margin-top: 20px;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Tektur', sans-serif !important;
   font-size: 14px;
 }
 
 .container input[type="submit"]:hover,
 .container a.custom-button:hover {
-  background-color: #0b106f;
+  background-color: #05083a;
 }

@@ -1,8 +1,10 @@
-/* Стили для фона страницы */
+/* шрифт Tektur */
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
 body {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Tektur', sans-serif !important;
     font-size: 14px;
-    background-image: url('https://i.pinimg.com/originals/d5/3e/10/d53e100ea60c940629c9f2e7115dbdf9.jpg');
+    background-image: url('https://i.pinimg.com/564x/d8/53/49/d85349f7e91f366aee9f3e21f468f4bf.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,8 +17,8 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 30px; /* Закругленные края */
-    background-color: #a6bdd7;
-    font-family: 'Comfortaa', sans-serif;
+    background-color: #7eb8cf;
+    font-family: 'Tektur', sans-serif !important;
 }
 
 /* Стили для .registration-header */
@@ -51,12 +53,12 @@ body {
     border-radius: 30px;
     text-decoration: none;
     text-align: center;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Tektur', sans-serif !important;
 }
 
 /* Стили для овальных кнопок */
 .registration-form button {
-    background-color: #3f67b2;
+    background-color: #0b106f;
     color: #fff;
     transition: background-color 0.3s;
     cursor: pointer;
@@ -64,13 +66,13 @@ body {
 
 /* Стили для изменения цвета кнопки при наведении */
 .registration-form button:hover {
-    background-color: #0b106f;
+    background-color: #05083a;
 }
 
 /* Стили для ссылок */
 .back-links a {
     margin-right: 15px;
-    color: #8d22eb;
+    color: #05083a;
     font-weight: bold;
 }
 

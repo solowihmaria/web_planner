@@ -8,12 +8,14 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 from django.views.decorators.http import require_GET
 
+
 def profile(request):
     return render(request, 'account/profile.html')
 
 def notes(request):
     categories = Category.objects.filter(user=request.user)
     return render(request, 'account/notes.html', {'categories': categories})
+
 
 @csrf_exempt
 def add_category(request):
@@ -105,4 +107,6 @@ def get_completion_data(request):
 
     # Отправляем данные в формате JSON
     return JsonResponse({'completed': completed_tasks, 'total': total_tasks})
+
+
 

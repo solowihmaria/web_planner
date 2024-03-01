@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Добавляем иконку -->
+      <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
       <link rel="stylesheet" href="{% static 'css/profile.css' %}">
       <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
       <link rel="stylesheet" href="{% static 'css/custom.css' %}">
@@ -24,7 +26,7 @@
         
         <!-- Поисковая строка -->
         <div class="navbar-icons">
-            <a href="#" class="navbar-icon"><i class="fas fa-bell"></i></a>
+            <a href="#" class="navbar-icon" data-bs-toggle="popover" title="Уведомления" data-bs-content="Содержание уведомления"><i class="fas fa-bell"></i></a>
             <a href="{% url 'login' %}" class="navbar-icon"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
@@ -39,7 +41,7 @@
             <a href="{% url 'profile' %}">Главная</a>
         </li>
         <li class="list-group-item">
-            <a href="#">Планы</a>
+            <a href="{% url 'calendar' %}">Планы</a>
         </li>
         <li class="list-group-item">
             <a href="{% url 'notes' %}">Задачи</a>
@@ -56,14 +58,14 @@
         <div class="carousel-inner">
             <!-- Здесь добавьте элементы слайдов для карусели -->
             <div class="carousel-item active">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 1">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Поставьте конкретные цели:</h1>
                     <p>Разбейте большие задачи на меньшие и устанавливайте ясные цели для повышения продуктивности</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 2">
+                <img src="https://i.pinimg.com/564x/68/2d/92/682d92852145dba84893922fe42b1975.jpg" class="d-block w-100" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Приоритезация задач:</h1>
                     <p>Определите наиважнейшие задачи и начинайте с них</p>
@@ -143,6 +145,8 @@
     <div class="chart-container">
         <canvas id="completionChart"></canvas>
     </div>
+
+
 </div>
 
 
@@ -175,7 +179,7 @@
                             labels: ['выполнено', 'не выполнено'],
                             datasets: [{
                                 data: [data.completed, data.total - data.completed],
-                                backgroundColor: ['#20205f', '#91979d'],
+                                backgroundColor: ['#20205f', '#63696f'],
                             }],
                         },
                     });
@@ -196,7 +200,7 @@
             } else if (completedPercent >= 20 && completedPercent <= 50) {
                 return 'Вы на верном пути!';
             } else if (completedPercent > 50 && completedPercent <= 70) {
-                return 'Вы проделали огромную работу. Не сдавайтесь!';
+                return 'Вы проделали огромную работу. Не сбавляйте темп!';
             } else if (completedPercent > 70 && completedPercent <= 99) {
                 return 'Вы почти закончили! Осталось совсем немного.';
             } else {
@@ -205,6 +209,16 @@
         }
     });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+    });
+</script>
+
 
 
 </body>
