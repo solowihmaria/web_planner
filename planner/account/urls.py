@@ -14,6 +14,12 @@ urlpatterns = [
     path('edit_note/', edit_note, name='edit_note'),
     path('delete_note/', delete_note, name='delete_note'),
     path('completion-data/', get_completion_data, name='completion_data'),
+    path('calendar/', views.calendar, name="calendar"),
+    path('all_events/', views.all_events, name="all_events"),
+    path('add_event/', views.add_event, name="add_event"),
+    path('update/', views.update, name="update"),
+    path('remove/', views.remove, name="remove"),
+
 
 
 

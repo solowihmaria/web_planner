@@ -26,7 +26,7 @@
         
         <!-- Поисковая строка -->
         <div class="navbar-icons">
-            <a href="#" class="navbar-icon" data-bs-toggle="popover" title="Уведомления" data-bs-content="Содержание уведомления"><i class="fas fa-bell"></i></a>
+            <a href="#" class="navbar-icon"><i class="fas fa-bell"></i></a>
             <a href="{% url 'login' %}" class="navbar-icon"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
@@ -145,8 +145,6 @@
     <div class="chart-container">
         <canvas id="completionChart"></canvas>
     </div>
-
-
 </div>
 
 
@@ -209,16 +207,6 @@
         }
     });
 </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl);
-        });
-    });
-</script>
-
 
 
 </body>
