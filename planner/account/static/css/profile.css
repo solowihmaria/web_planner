@@ -145,8 +145,8 @@ h2.text-center.mb-4 {
 }
 
 #completionChart {
-    width: 400px !important; /* Укажите нужную ширину */
-    height: 400px !important; /* Укажите нужную высоту */
+    width: 350px !important; /* Укажите нужную ширину */
+    height: 350px !important; /* Укажите нужную высоту */
     margin: auto; /* Устанавливаем автомаргин для центрирования */
 }
 

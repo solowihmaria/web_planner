@@ -9,11 +9,17 @@ body {
 
 /* НАСТРОЙКА ВЕРХНЕЙ ПАНЕЛИ */
 .navbar.navbar-dark.fixed-top {
-  background-color: #8bb0e4;
+  background-color: #072d51;
 }
 
 .navbar.navbar-dark.fixed-top .navbar-brand {
-  color: #b1c8ee; /* Название приложения сверху */
+  color: #e2e7f0; /* Название приложения сверху */
+  text-align: center;
+  width: 100%;
+}
+
+.navbar.navbar-dark.fixed-top .navbar-brand a {
+  display: inline-block;
 }
 
 .navbar-wrapper {
@@ -150,13 +156,13 @@ body {
 .carousel-caption h1 {
   font-family: 'Tektur', sans-serif;
   font-size: 4.4em;
-  color: #ffffff; /* Черный цвет текста */
+  color: #ffffff; /*  цвет текста */
 }
 
 #myCarousel .carousel-caption p {
   font-family: 'Tektur', sans-serif;
   font-size: 2.2em;
-  color: #ffffff; /* Черный цвет текста */
+  color: #ffffff; /*  цвет текста */
 }
 
 .featurette-heading {
