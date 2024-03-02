@@ -179,7 +179,18 @@ h2.text-center.mb-4 {
     object-fit: cover; /* Масштабирование и обрезка изображения для занятия всего контейнера */
 }
 
+/* Добавьте эти стили в ваш CSS для стилизации маркеров */
+    .notification-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #cad2ef;
+    }
 
+    .notification-item p {
+        margin: 0;
+    }
 
 
 

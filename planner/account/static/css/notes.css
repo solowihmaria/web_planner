@@ -55,7 +55,7 @@ header {
 .container.content {
     margin-left: 20%; /* Устанавливаем отступ слева, равный ширине бокового меню */
     padding: 20px; /* Добавляем отступы в основной контент */
-    width: 80%; /* Установка ширины контента на оставшиеся 85% */
+    width: 83%; /* Установка ширины контента на оставшиеся 85% */
 }
 
 
@@ -67,7 +67,7 @@ header {
 }
 
 .navbar .nav-link {
-    color: #edecf0 !important; /*  цвет текста обращения к пользователю */
+    color: #20205f !important; /*  цвет текста обращения к пользователю */
 }
 
 
@@ -76,12 +76,12 @@ header {
 /* левая иконка*/
 #notification-icon {
     font-size: 1.7rem;
-    color: white;
+    color: #20205f;
     margin-right: 10px; /* отступ для разделения от текста */
 }
 
 .navbar-brand {
-    color: white !important; /* Цвет текста белый */
+    color: #20205f !important; /* Цвет текста белый */
 }
 
 

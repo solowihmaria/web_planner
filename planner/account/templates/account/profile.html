@@ -9,7 +9,8 @@
       <link rel="stylesheet" href="{% static 'css/profile.css' %}">
       <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
       <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Личный кабинет</title>
 </head>
 <body>
@@ -17,22 +18,36 @@
 <!-- Верхняя панель навигации -->
 <header class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <i class="fas fa-calendar-check" id="notification-icon"></i>
+
         <a class="navbar-brand" href="#">ПЛАННЕР ЗАДАЧ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        
+
         <!-- Поисковая строка -->
         <div class="navbar-icons">
-            <a href="#" class="navbar-icon"><i class="fas fa-bell"></i></a>
+            <i class="fas fa-bell" id="notification-icon" data-bs-toggle="modal" data-bs-target="#notificationsModal"></i>
             <a href="{% url 'login' %}" class="navbar-icon"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
 </header>
 
 
+<!-- Добавьте всплывающее окно уведомлений в ваш HTML -->
+<div class="modal fade" id="notificationsModal" tabindex="-1" aria-labelledby="notificationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationsModalLabel">Напоминаем о предстоящих событиях!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="notificationsContent">
+                <!-- Здесь будут отображаться уведомления -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Боковая панель для навигации (по умолчанию открыта) -->
 <div id="sidebar">
@@ -56,7 +71,7 @@
     <!-- КАРУСЕЛЬ -->
     <div id="carouselAdvice" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
-            <!-- Здесь добавьте элементы слайдов для карусели -->
+            <!-- элементы слайдов для карусели -->
             <div class="carousel-item active">
                 <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block">
@@ -65,61 +80,61 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/68/2d/92/682d92852145dba84893922fe42b1975.jpg" class="d-block w-100" alt="Slide 2">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Приоритезация задач:</h1>
                     <p>Определите наиважнейшие задачи и начинайте с них</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 3">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 3">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Используйте метод Помидора:</h1>
                     <p>Работайте фокусированно 25 минут, затем делайте короткий перерыв. Повторяйте цикл</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 4">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 4">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Используйте to-do листы:</h1>
                     <p>Записывайте свои задачи, чтобы не забывать о них</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 5">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 5">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Паузы для отдыха:</h1>
                     <p>Регулярные короткие перерывы помогут сохранить высокую концентрацию</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 6">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 6">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Запланируйте завтра сегодня:</h1>
                     <p>Перед окончанием рабочего дня определите свои задачи на следующий день</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 7">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 7">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Избегайте перфекционизма:</h1>
                     <p>Сосредотачивайтесь на выполнении задач, а не на их безупречности</p>
                 </div>
             </div><div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 8">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 8">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Утренняя рутина:</h1>
                     <p>Создайте утренний ритуал, чтобы запустить себя в рабочий режим</p>
                 </div>
             </div><div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 9">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 9">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Техника 2-минут:</h1>
                     <p>Если задача займет менее 2 минут, сделайте ее немедленно</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/564x/a7/4d/99/a74d9927735b73841fc55036f67cdad0.jpg" class="d-block w-100" alt="Slide 10">
+                <img src="https://i.pinimg.com/736x/21/12/a4/2112a423d0633749aa427536ae8656cc.jpg" class="d-block w-100" alt="Slide 10">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Избегайте многозадачности:</h1>
                     <p>Фокусируйтесь на одной задаче за раз, чтобы повысить эффективность</p>
@@ -151,8 +166,8 @@
 
 <!-- Подключение необходимых скриптов для Bootstrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" ></script>
-<script src="{% static 'js/scripts.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -207,6 +222,48 @@
         }
     });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Добавление слушателя событий для иконки уведомлений
+        document.getElementById('notification-icon').addEventListener('click', function () {
+            // Загрузка уведомлений через AJAX
+            fetch('{% url "get_notifications" %}')
+                .then(response => response.json())
+                .then(data => {
+                    // Отображение уведомлений в модальном окне
+                    const notificationsContent = document.getElementById('notificationsContent');
+                    notificationsContent.innerHTML = '';  // Очищаем содержимое
+                    if (data.notifications.length > 0) {
+                        data.notifications.forEach(notification => {
+                            const notificationItem = document.createElement('div');
+                            notificationItem.classList.add('notification-item');
+                            notificationItem.innerHTML = `<p>${notification.name} - ${notification.start}</p>`;
+                            notificationsContent.appendChild(notificationItem);
+                        });
+                    } else {
+                        notificationsContent.innerHTML = '<p>Нет ближайших уведомлений</p>';
+                    }
+
+                    // Открытие модального окна
+                    const notificationsModal = new bootstrap.Modal(document.getElementById('notificationsModal'));
+                    notificationsModal.show();
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        // Добавление слушателя событий для кнопки закрытия модального окна
+        const closeButton = document.querySelector('#notificationsModal .btn-close');
+        closeButton.addEventListener('click', function () {
+            // Добавляем задержку перед перезагрузкой страницы
+            setTimeout(function () {
+                // Перезагрузка страницы
+                window.location.href = window.location.href;
+            });
+        });
+    });
+</script>
+
 
 
 </body>

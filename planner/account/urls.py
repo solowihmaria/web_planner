@@ -2,7 +2,7 @@
 from django.urls import path
 from . import views
 from .views import add_category, add_note, update_note, edit_category, delete_category, edit_note, delete_note
-from .views import get_completion_data
+from .views import get_completion_data, get_notifications
 urlpatterns = [
     path('', views.profile, name="profile"),
     path('notes/', views.notes, name='notes'),
@@ -19,6 +19,7 @@ urlpatterns = [
     path('add_event/', views.add_event, name="add_event"),
     path('update/', views.update, name="update"),
     path('remove/', views.remove, name="remove"),
+    path('get_notifications/', get_notifications, name='get_notifications'),
 
 
 

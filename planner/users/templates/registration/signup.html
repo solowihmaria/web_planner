@@ -8,25 +8,29 @@
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="{% static 'css/log.css' %}">
     <link rel="stylesheet" href="{% static 'css/reg.css' %}">
 </head>
 <body>
-    <div class="registration-container">
-        <div class="registration-header">
-            <i class="fas fa-calendar"></i> <!-- Значок календаря -->
-            <h2>Регистрация</h2>
+    <div class="container">
+        <div class="left-image">
+            <img src="https://i.pinimg.com/736x/08/47/a7/0847a71bf1256e287518a304b533c3b0.jpg" alt="Left Image">
         </div>
 
-        <form method="post" class="registration-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Зарегистрироваться</button>
-        </form>
+        <div class="right-content registration-container">
+            <div class="registration-header">
+                <h2>Регистрация</h2>
+            </div>
 
-        <div class="back-links">
-            <a href="{% url 'login' %}" class="custom-button custom-link">Войти в существующий аккаунт</a>
-            <a href="{% url 'home' %}" class="custom-button custom-link">Вернуться на главную</a>
+            <form method="post" class="registration-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Зарегистрироваться</button>
+            </form>
 
+            <div class="back-links">
+                <a href="{% url 'login' %}" class="custom-button custom-link">Войти в аккаунт</a>
+            </div>
         </div>
     </div>
 </body>

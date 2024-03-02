@@ -67,7 +67,7 @@ header {
 }
 
 .navbar .nav-link {
-    color: #edecf0 !important; /*  цвет текста обращения к пользователю */
+    color: #20205f !important; /*  цвет текста обращения к пользователю */
 }
 
 
@@ -76,12 +76,12 @@ header {
 /* левая иконка*/
 #notification-icon {
     font-size: 1.7rem;
-    color: white;
+    color: #20205f;
     margin-right: 10px; /* отступ для разделения от текста */
 }
 
 .navbar-brand {
-    color: white !important; /* Цвет текста белый */
+    color: #20205f !important; /* Цвет текста белый */
 }
 
 

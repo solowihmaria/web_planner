@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
   </head>
   <div class="container">
+    <div class="left-image">
+      <img src="https://i.pinimg.com/736x/08/47/a7/0847a71bf1256e287518a304b533c3b0.jpg" alt="Left Image">
+    </div>
 
-    <h2>Вход</h2>
-
-    <form method="post">
-      {% csrf_token %}
-      <table>
-        {{ form.as_p }}
-        <tr>
-          <td>&nbsp;</td>
-          <td><input type="submit" value="Войти" class="custom-button"></td>
-        </tr>
-      </table>
-
-    </form>
+    <div class="right-content">
+      <h2>Вход</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-fields">
+          {{ form.as_p }}
+        </div>
+        <div class="submit-button">
+          <input type="submit" value="Войти" class="custom-button">
+        </div>
+      </form>
+    </div>
   </div>
 {% endblock %}

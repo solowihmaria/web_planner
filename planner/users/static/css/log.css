@@ -4,65 +4,73 @@
 body {
   font-family: 'Tektur', sans-serif !important;
   font-size: 17px;
-  background-image: url('https://i.pinimg.com/564x/d8/53/49/d85349f7e91f366aee9f3e21f468f4bf.jpg');
   background-size: cover;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #d2dbe4;
+  background-color: #dfe9f4;
 }
 
 .container {
-  max-width: 400px;
-  width: 100%;
-  padding: 20px;
-  background-color: #b4dbeb;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  display: flex;
+  max-width: 600px; /* Задаем максимальную ширину контейнера */
+  margin: 0 auto;
+  border-radius: 5px; /* Закругленные края */
+  overflow: hidden; /* Добавляем overflow: hidden, чтобы изображение не выходило за пределы контейнера */
+  border: 2px solid #c8d9e0; /* Добавляем границу для контейнера */
 }
 
-.container h2 {
-  color: #333;
+.left-image {
+  flex: 1;
+  overflow: hidden; /* Добавляем overflow: hidden, чтобы изображение не выходило за пределы левой части контейнера */
+}
+
+.left-image img {
+  width: 100%;
+  height: 100%; /* Используем 100% высоты для изображения */
+  object-fit: cover; /* Заполняем контейнер, сохраняя пропорции и обрезая изображение по необходимости */
+}
+
+.right-content {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f7fc;
+}
+
+.right-content h2 {
+  color: #050505;
   margin-top: 0;
 }
 
-.container i.fas.fa-calendar {
-  font-size: 3em;
-  margin-bottom: 20px;
-  vertical-align: middle;/* Изменено для увеличения размера иконки */
-}
-
-.container form {
+.right-content form {
   margin-top: 20px;
 }
 
-.container input[type="text"],
-.container input[type="password"] {
+.right-content input[type="text"],
+.right-content input[type="password"] {
   width: calc(100% - 20px);
   padding: 10px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
-.container input[type="submit"],
-.container a.custom-button {
-  background-color: #0b106f;
-  color: white;
+
+.right-content input[type="submit"] {
+  margin-top: 20px;
+  background-color: #0b106f; /* Голубой цвет фона кнопки */
+  color: #fff; /* Белый цвет текста кнопки */
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 10px; /* Закругленные края */
   cursor: pointer;
   transition: background-color 0.3s;
-  display: inline-block;
-  margin-top: 20px;
-  font-family: 'Tektur', sans-serif !important;
+  font-family: 'Comfortaa', sans-serif;
   font-size: 14px;
 }
 
-.container input[type="submit"]:hover,
-.container a.custom-button:hover {
-  background-color: #05083a;
+.right-content input[type="submit"]:hover {
+  background-color: #0309a4; /* Цвет фона при наведении */
 }

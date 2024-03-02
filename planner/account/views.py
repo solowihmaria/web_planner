@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
 from django.views.decorators.http import require_GET
 from django.contrib.auth.decorators import login_required
+from datetime import datetime, timedelta
 
 
 
@@ -174,4 +175,14 @@ def remove(request):
     return JsonResponse(data)
 
 
-
+def get_notifications(request):
+    # Получаем текущего пользователя
+    user = request.user
+    # Получаем ближайшие события за последние 3 дня
+    today = datetime.now()
+    end_date = today + timedelta(days=3)
+    events = Events.objects.filter(user=user, start__range=(today, end_date)).order_by('start')
+    # Создаем список уведомлений для передачи в шаблон
+    notifications = [{'name': event.name, 'start': event.start.strftime('%Y-%m-%d')} for event in events]
+    # Возвращаем JSON-ответ с уведомлениями
+    return JsonResponse({'notifications': notifications})
