@@ -120,6 +120,50 @@ body {
   margin-bottom: 15px; /* Отступ снизу между иконкой и текстом */
 }
 
+@media (max-width: 767px) {
+  .custom-container {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .navbar.navbar-dark.fixed-top .navbar-brand {
+    text-align: left;
+    width: 100%;
+  }
+
+  .carousel,
+  .carousel-item,
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .why-us-container h2 {
+    font-size: 36px;
+  }
+
+  .why-us-container .oval-btn {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+
+  .carousel-caption h1 {
+    font-size: 2.5em;
+  }
+
+  #myCarousel .carousel-caption p {
+    font-size: 1.5em;
+  }
+
+  .featurette-heading {
+    font-size: 40px;
+  }
+
+  .navbar-wrapper {
+    margin-top: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .custom-container {
     max-width: 300px; /* Уменьшил максимальную ширину контейнера для более узких экранов */
@@ -132,6 +176,10 @@ body {
   .custom-container {
     max-width: 350px; /* Добавил максимальную ширину контейнера для средних экранов */
   }
+
+  /* .featurette-heading {
+    margin-top: 120px;
+  } */
 }
 
 @media (min-width: 1200px) {
@@ -171,46 +219,4 @@ body {
 
 .lead {
   font-family: 'Tektur', sans-serif;
-}
-
-/* АДАПТИВНЫЙ CSS */
-@media (min-width: 768px) {
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
-
-  .navbar-wrapper > .container {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
-  .navbar-wrapper .navbar {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
-
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 992px) {
-  /* .featurette-heading {
-    margin-top: 120px;
-  } */
-}
-
-.img-rounded.img-responsive.center-block {
-  max-width: 100%;
-  height: auto;
 }
