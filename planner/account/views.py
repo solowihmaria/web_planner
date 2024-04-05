@@ -20,6 +20,7 @@ def notes(request):
     return render(request, 'account/notes.html', {'categories': categories})
 
 
+
 @csrf_exempt
 def add_category(request):
     if request.method == 'POST':
