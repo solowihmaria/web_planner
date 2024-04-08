@@ -11,7 +11,6 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
 
 
-
 def profile(request):
     return render(request, 'account/profile.html')
 

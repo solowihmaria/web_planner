@@ -44,6 +44,15 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
         Добавить новую категорию задач
     </button>
+    <!-- Кнопка для запуска метода помодоро -->
+    <button type="button" class="btn btn-success" id="startPomodoro">
+        Запустить метод помодоро
+    </button>
+
+    <!-- Элемент для отображения таймера помодоро -->
+    <div id="pomodoroTimer" class="text-center" style="display: none;">
+        <p id="timerDisplay" style="font-size: 24px;"></p>
+    </div>
 
    <!-- Место для отображения списка категорий -->
 <div class="accordion" id="categoryAccordion">
@@ -610,6 +619,99 @@
     });
 </script>
 
+<script>
+// Функция для запуска таймера помодоро
+function startPomodoro() {
+    // Получаем кнопку и создаем рядом с ней элемент для таймера и надписи
+    const button = document.getElementById('startPomodoro');
+    const timerDisplay = document.createElement('div');
+    timerDisplay.id = 'timerDisplay';
+    const timerText = document.createElement('p');
+    timerText.innerText = 'Сконцентрируйтесь на выполнении задачи! Осталось: ';
+    timerDisplay.appendChild(timerText);
+    button.parentNode.insertBefore(timerDisplay, button.nextSibling);
+
+    // Показываем элемент таймера
+    document.getElementById('pomodoroTimer').style.display = 'block';
+
+    // Устанавливаем начальное время (25 минут)
+    let time = 25 * 60;
+
+    // Обновляем отображение таймера каждую секунду
+    let timerInterval = setInterval(function() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        // Добавляем ведущий ноль, если нужно
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        // Обновляем отображение таймера
+        timerText.innerHTML = `Сконцентрируйтесь на выполнении задачи! Осталось: ${minutes}:${seconds}`;
+
+        // Уменьшаем время на одну секунду
+        time--;
+
+        // Проверяем, если время вышло
+        if (time < 0) {
+            clearInterval(timerInterval);
+            // Запускаем таймер отдыха
+            startBreak();
+        }
+    }, 1000);
+}
+
+// Функция для запуска таймера отдыха
+function startBreak() {
+    // Получаем элемент для отображения времени отдыха
+    const timerText = document.getElementById('timerDisplay').querySelector('p');
+    const timerSpan = document.createElement('span');
+    timerText.innerText = 'Отдых: ';
+    timerText.appendChild(timerSpan);
+
+    // Устанавливаем время отдыха (5 минут)
+    let breakTime = 5 * 60;
+
+    // Обновляем отображение таймера каждую секунду
+    let timerInterval = setInterval(function() {
+        let minutes = Math.floor(breakTime / 60);
+        let seconds = breakTime % 60;
+
+        // Добавляем ведущий ноль, если нужно
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        // Обновляем отображение таймера отдыха
+        timerSpan.innerHTML = `${minutes}:${seconds}`;
+
+        // Уменьшаем время на одну секунду
+        breakTime--;
+
+        // Проверяем, если время вышло
+        if (breakTime < 0) {
+            clearInterval(timerInterval);
+            // Скрываем элемент таймера
+            document.getElementById('pomodoroTimer').style.display = 'none';
+            // Показываем кнопку снова
+            document.getElementById('startPomodoro').style.display = 'block';
+            // Удаляем текст внутри элемента timerText
+            timerText.innerHTML = '';
+        }
+    }, 1000);
+}
+
+// Находим кнопку "Запустить метод помодоро"
+const startButton = document.getElementById('startPomodoro');
+
+// Добавляем обработчик события для клика по кнопке
+startButton.addEventListener('click', function() {
+    // Скрываем кнопку, чтобы нельзя было запустить ещё один помодоро до окончания предыдущего
+    startButton.style.display = 'none';
+    // Запускаем функцию для запуска таймера помодоро
+    startPomodoro();
+});
+
+</script>
 
 </body>
 </html>

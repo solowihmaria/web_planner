@@ -245,7 +245,15 @@ header {
     text-decoration: line-through; /* Перечеркивание текста при отметке чекбокса */
     color: #242259; /* Цвет текста при отметке чекбокса */
 }
-
-
+/* Стили для метода помодора */
+ #startPomodoro {
+        background-color: #2b0c4d;
+    }
+ #timerDisplay {
+        text-align: center;
+        font-size: 26px; /
+        color: #0b0314;
+        font-weight: bold;
+    }
 
 
