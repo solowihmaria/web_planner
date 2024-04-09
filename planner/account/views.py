@@ -18,8 +18,6 @@ def notes(request):
     categories = Category.objects.filter(user=request.user)
     return render(request, 'account/notes.html', {'categories': categories})
 
-
-
 @csrf_exempt
 def add_category(request):
     if request.method == 'POST':
@@ -186,3 +184,5 @@ def get_notifications(request):
     notifications = [{'name': event.name, 'start': event.start.strftime('%Y-%m-%d')} for event in events]
     # Возвращаем JSON-ответ с уведомлениями
     return JsonResponse({'notifications': notifications})
+
+
