@@ -4,8 +4,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
 
-# Создаем здесь представления.
-
 def home(request):
     return render(request, "users/home.html")
 
